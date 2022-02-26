@@ -1,0 +1,35 @@
+//  수 정렬하기 4
+//  11931.cpp
+//  Algorithm_Baekjoon
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int N;
+vector<int> v;
+
+int main(void) {
+    cin.tie(0);
+    cout.tie(0);
+    std::ios::sync_with_stdio(false);
+    
+    cin >> N;
+    
+    for (int i = 0; i < N; i++) {
+        int num;
+        cin >> num;
+        v.push_back(num);
+    }
+    
+    sort(v.begin(), v.end());
+    reverse(v.begin(), v.end());
+    
+    for (int i = 0; i < N; i++) {
+        cout << v[i] << "\n";
+    }
+    
+    return 0;
+}
