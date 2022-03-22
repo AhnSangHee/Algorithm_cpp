@@ -46,11 +46,11 @@ int main() {
             if (nx < 0 || ny < 0 || nx >= N || ny >= M) continue;
             
             // 토마토가 익지 않은 경우만 체크. 이미 익은 경우는 넘어간다.
-            if (tomato[nx][ny] == 1 || tomato[nx][ny] == -1 || tomato[nx][ny] != 0) continue;
-            
             // 토마토 익히고 (거리 더하고) 큐에 넣기 (익은 토마토에 대해 BFS)
-            tomato[nx][ny] = tomato[x][y] + 1;
-            q.push({nx, ny});
+            if (tomato[nx][ny] == 0) {
+                q.push({nx, ny});
+                tomato[nx][ny] = tomato[x][y] + 1;
+            }
         }
     }
     
